@@ -1,0 +1,101 @@
+.cart-heading {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.label {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.cart {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.line {
+  display: block;
+  width: 50px;
+  height: 4px;
+  background-color: #007bff;
+  margin: 10px auto;
+}
+
+.Items {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.Items div {
+  padding: 15px;
+  border-bottom: 1px solid #eaeaea;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Items div:last-child {
+  border-bottom: none;
+}
+
+.Items img {
+  border-radius: 8px;
+}
+
+.Items p {
+  margin: 0;
+}
+
+.Items input[type="number"] {
+  width: 60px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s;
+}
+
+.Items input[type="number"]:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.Items .flex {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.Items .flex div {
+  margin-left: 15px;
+}
+
+.Items .flex p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.Items .flex .size-label {
+  padding: 5px 10px;
+  background-color: #e9ecef;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.Items .flex:hover {
+  background-color: #f1f1f1;
+  transition: background-color 0.3s;
+}
+
+.bin{
+  height: 20px;
+  width: 20px;
+}
+
+
+

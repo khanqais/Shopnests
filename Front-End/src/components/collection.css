@@ -1,0 +1,18 @@
+.collection-wrapper {
+  display: flex;
+  gap: 2rem;
+  padding: 50px;
+}
+
+.filter {
+  width: 180px; 
+  
+}
+
+.collection {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 1.5rem;
+  row-gap: 0.5rem;
+  flex: 1; 
+}

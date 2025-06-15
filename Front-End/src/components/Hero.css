@@ -1,0 +1,57 @@
+.hero-section {
+  display: flex;
+  width: 1000px;
+  height: 350px;
+  margin: 40px auto;
+  border: 1px solid #ccc;
+}
+
+.hero-left {
+  width: 50%;
+  background-color: white;
+  padding: 80px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.subtitle {
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #444;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.shop-link {
+  font-weight: bold;
+  font-size: 14px;
+  color: #333;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+}
+
+.shop-link::after {
+  content: "";
+  display: inline-block;
+  width: 40px;
+  height: 1px;
+  background: #333;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+.hero-right {
+  width: 50%;
+  background-color:  #FFDAD6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-right img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
