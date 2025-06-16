@@ -18,31 +18,31 @@ const login = async (req, res) => {
   }
 
   const token = user.createJWT();
-  res.json({ success: true, token });
+  res.json({ success: true, token, userId: user._id }); 
 };
 
 
-const register=async(req,res)=>{
-    try {
-        const {name,email,password}=req.body;
-        const ExistUser=await User.findOne({email})
 
-        if(ExistUser)
-        {
-          return res.json({success:false,message:"User Already Exists"})
-        }
-        const user= await User.create({name,email,password,})
-        const token=user.createJWT();
-        res.json({success:true,token })
-       
-        
-    } catch (error) {
-        console.log(error);
-        
+const register = async (req, res) => {
+  try {
+    const { name, email, password } = req.body;
+    const ExistUser = await User.findOne({ email });
+
+    if (ExistUser) {
+      return res.json({ success: false, message: "User Already Exists" });
     }
-    
 
-}
+    const user = await User.create({ name, email, password });
+    const token = user.createJWT();
+
+    res.json({ success: true, token, userId: user._id });
+
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ success: false, message: "Internal Server Error" }); 
+  }
+};
+
 const AdminLogin=async(req,res)=>{
    try {
     const {email,password}=req.body;

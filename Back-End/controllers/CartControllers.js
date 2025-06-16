@@ -18,7 +18,7 @@ const addToCart = async (req, res) => {
       });
     }
 
-    let cartData = userData.cartData || {};
+    let cartData = userData.CartData || {};
 
     
     if (cartData[itemId]) {
@@ -32,8 +32,11 @@ const addToCart = async (req, res) => {
       cartData[itemId][size] = 1;
     }
 
-    // Update user's cart in database
-    await Usermodels.findByIdAndUpdate(userId, { cartData });
+    
+    await Usermodels.findByIdAndUpdate(
+      userId,
+      { CartData: cartData }
+    );
     
     res.json({ 
       success: true, 
@@ -54,7 +57,7 @@ const updateCart = async (req, res) => {
   try {
     const { userId, itemId, size, quantity } = req.body;
     
-    // Validate required fields
+  
     if (!userId || !itemId || !size || quantity === undefined) {
       return res.json({ 
         success: false, 
@@ -62,7 +65,7 @@ const updateCart = async (req, res) => {
       });
     }
 
-    // Find user and check if exists
+   
     const userData = await Usermodels.findById(userId);
     if (!userData) {
       return res.json({ 
@@ -71,29 +74,31 @@ const updateCart = async (req, res) => {
       });
     }
 
-    // Initialize cartData if it doesn't exist
-    let cartData = userData.cartData || {};
+    let cartData = userData.CartData || {};
 
-    // Update cart logic
+    
     if (quantity <= 0) {
-      // Remove item from cart
+     
       if (cartData[itemId]) {
         delete cartData[itemId][size];
-        // If no sizes left for this item, remove the item entirely
+        
         if (Object.keys(cartData[itemId]).length === 0) {
           delete cartData[itemId];
         }
       }
     } else {
-      // Add or update quantity
+      
       if (!cartData[itemId]) {
         cartData[itemId] = {};
       }
       cartData[itemId][size] = quantity;
     }
 
-    // Update user's cart in database
-    await Usermodels.findByIdAndUpdate(userId, { cartData });
+    
+    await Usermodels.findByIdAndUpdate(
+      userId,
+      { CartData: cartData }
+    );
     
     res.json({ 
       success: true, 
@@ -113,8 +118,7 @@ const updateCart = async (req, res) => {
 const getUserCart = async (req, res) => {
   try {
     const { userId } = req.body;
-    
-    // Validate userId
+  
     if (!userId) {
       return res.json({ 
         success: false, 
@@ -122,7 +126,7 @@ const getUserCart = async (req, res) => {
       });
     }
 
-    // Find user and check if exists
+    
     const userData = await Usermodels.findById(userId);
     if (!userData) {
       return res.json({ 
@@ -131,8 +135,8 @@ const getUserCart = async (req, res) => {
       });
     }
 
-    // Return cart data (empty object if no cart data exists)
-    const cartData = userData.cartData || {};
+    
+    const cartData = userData.CartData || {};
     
     res.json({ 
       success: true, 

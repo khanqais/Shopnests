@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [currentState, setCurrentState] = useState("Login");
-  const {SetToken,token}=useContext(ShopContext)
+  const {SetToken,token,getUserCart}=useContext(ShopContext)
   const navigate = useNavigate();
 
   const [name,setName]=useState('')
@@ -23,6 +23,8 @@ const Login = () => {
       if (response.data.success) {
         SetToken(response.data.token);
         localStorage.setItem('token', response.data.token);
+        localStorage.setItem('userId', response.data.userId);
+        
         toast.success("Signin Successfully")
       } else {
         toast.error(response.data.message);
@@ -32,10 +34,14 @@ const Login = () => {
       if (response.data.success) {
         SetToken(response.data.token);
         localStorage.setItem('token', response.data.token);  
+        localStorage.setItem('userId', response.data.userId);
+        await getUserCart(response.data.token); 
         toast.success("Login Completed")
       } else {
         toast.error(response.data.message);
       }
+      
+      
     }
   } catch (error) {
     console.log(error);
@@ -43,6 +49,8 @@ const Login = () => {
       toast.error(error.response.data.message);
     } else {
       toast.error("Something went wrong");
+      console.log(error.message);
+      
     }
   }
 };

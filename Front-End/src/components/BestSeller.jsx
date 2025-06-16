@@ -12,7 +12,7 @@ const BestSeller = () => {
       SetBestSeller(BestProduct);
       
     },[products])
-    console.log({BestSeller});
+    
   return (
     <>
     <div className='title'>
