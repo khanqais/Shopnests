@@ -6,7 +6,8 @@ const connectDB = require("./DB/connect");
 const connectCloudinary=require("./config/cloudinary");
 const router = require("./routes/auth_route");
 const ProductRoute = require("./routes/ProductRoute");
-const CartRoute=require('./routes/CartRoute')
+const CartRoute=require('./routes/CartRoute');
+const OrderRoute = require("./routes/OrderRoute");
 
 app.use(express.json());
 app.use(cors());
@@ -14,6 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api/user',router)
 app.use('/api/product',ProductRoute)
 app.use('/api/cart',CartRoute)
+app.use('/api/order',OrderRoute)
 
 app.get('/',(req,res)=>{
     res.send("Hii mom ")

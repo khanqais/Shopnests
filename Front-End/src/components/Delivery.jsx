@@ -12,6 +12,7 @@ const Delivery = () => {
       <form className="space-y-4">
         <div className="flex gap-4">
           <input
+            
             type="text"
             placeholder="First name"
             className="flex-1 border border-gray-300 rounded px-3 py-2"
