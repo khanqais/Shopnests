@@ -31,7 +31,7 @@ const AddProduct= async (req,res)=>{
             date:Date.now()
 
         }
-        console.log(productData);
+        
 
         const product=await ProductModel.create(productData)
 

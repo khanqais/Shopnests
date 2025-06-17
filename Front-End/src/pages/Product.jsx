@@ -15,21 +15,20 @@ const Product = () => {
   const [image,setimage]=useState('');
   const [size,SetSize]=useState('');
   const {AddtoCart,products} =useContext(ShopContext)
-  const fetchProductData= async ()=>{
-    products.map((item)=>{
-      if(item._id===productId)
-      {
-        setProductData(item);
-        setimage(item.image[0])
-        return null;
-      }
-    })
+  const fetchProductData = () => {
+  const foundProduct = products.find(item => item._id === productId);
+  if (foundProduct) {
+    setProductData(foundProduct);
+    setimage(foundProduct.image[0]);
   }
+};
+
    useEffect(() => {
-     fetchProductData();
-   
-     
-   }, [productId])
+  if (products.length > 0) {
+    fetchProductData();
+  }
+}, [products, productId]);
+
    
   return productData ? (
      <>

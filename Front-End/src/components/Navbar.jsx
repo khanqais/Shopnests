@@ -65,7 +65,7 @@ const Navbar = ({ query, handleInput }) => {
                 token && 
                 <ul className="dropdown-menu">
                 <li>My Profile</li>
-                <li onClick={()=>navigate('/orders')}>Orders</li>
+                <li onClick={()=>navigate('/order')}>Orders</li>
                 <li onClick={logout}>Logout</li>
               </ul>
               }
