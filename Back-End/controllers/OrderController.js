@@ -28,13 +28,9 @@ res.json({success:true,message:"Order Placed"})
         
     }
 }
-const placeorderStripe=async(req,res)=>{
 
-}
 
-const placeorderRazorpay=async(req,res)=>{
 
-}
 
 
 const allorder = async (req, res) => {
@@ -77,16 +73,12 @@ const UserOrders=async(req,res)=>{
   }
 }
 
-const UpdateStatus=async(req,res)=>{
 
-}
 
 module.exports={
     placeorder,
-    placeorderRazorpay,
-    placeorderStripe,
     allorder,
     UserOrders,
-    UpdateStatus
+    
 }
 
