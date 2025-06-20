@@ -14,7 +14,7 @@ const Orders = ({token}) => {
     try {
       const response=await axios.post(backendUrl+'/api/order/list',{},{headers:{token}})
       console.log(response);
-      
+
       if(response.data.success)
       {
         setorder(response.data.orders)
