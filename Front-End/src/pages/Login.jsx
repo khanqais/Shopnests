@@ -8,13 +8,13 @@ import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [currentState, setCurrentState] = useState("Login");
-  const {SetToken,token,getUserCart}=useContext(ShopContext)
+  const {SetToken,token,getUserCart,backendUrl}=useContext(ShopContext)
   const navigate = useNavigate();
 
   const [name,setName]=useState('')
   const [password,Setpassword]=useState('')
   const [email,SetEmail]=useState('')
-  const backendUrl="http://localhost:4000"
+  
   const onSubmitHandle = async (event) => {
   event.preventDefault();
   try {

@@ -4,8 +4,8 @@ import { ShopContext } from '../context/ShopContext';
 import axios from 'axios';
 
 const Orders = () => {
-  const backendUrl = "http://localhost:4000";
-  const { token } = useContext(ShopContext);
+  
+  const { token,backendUrl } = useContext(ShopContext);
 
   const [OrderData, SetOrderData] = useState([]);
 

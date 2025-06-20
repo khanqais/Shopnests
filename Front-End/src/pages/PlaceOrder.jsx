@@ -6,11 +6,11 @@ import { assets } from "../assets/assets";
 import { useNavigate } from 'react-router-dom';
 import { ShopContext } from "../context/ShopContext";
 import axios from "axios";
-import { toast } from 'react-toastify'; // Add this import
+import { toast } from 'react-toastify'; 
 
 const PlaceOrder = () => {
-  const [method, setMethod] = useState('cod'); // Fixed variable naming consistency
-  const backendUrl = "http://localhost:4000";
+  const [method, setMethod] = useState('cod'); 
+  
   const navigate = useNavigate();
   const {
     token,
@@ -22,7 +22,8 @@ const PlaceOrder = () => {
     products,
     SetToken,
     setCartitem,
-    getUserCart
+    getUserCart,
+    backendUrl
   } = useContext(ShopContext);
 
   const [formData, setFormData] = useState({

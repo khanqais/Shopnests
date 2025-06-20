@@ -8,7 +8,8 @@ const ShopContextProvider=(props)=>{
     const delivery_free=10
     const [cartitem,setCartitem]=useState({})
     const [products,SetProdcut]=useState([])
-    const backendUrl="http://localhost:4000"
+    const backendUrl = import.meta.env.VITE_BACKEND_URL;
+
     const [token,SetToken]=useState('')
     
     const AddtoCart = async (itemId, size) => { 
@@ -188,7 +189,7 @@ useEffect(() => {
     
     const value={
     
-        currency ,delivery_free,cartitem,AddtoCart,getCartCount,updatequantity,getCartAmount,backendUrl,products,SetToken,token,setCartitem,getUserCart
+        currency ,delivery_free,cartitem,AddtoCart,getCartCount,updatequantity,getCartAmount,backendUrl,products,SetToken,token,setCartitem,getUserCart,backendUrl
     }
     return (
         <ShopContext.Provider value={value}>
