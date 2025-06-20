@@ -1,11 +1,13 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 const Login = ({SetToken}) => {
     const [email,setemail]=useState('')
     const [password,setpassword]=useState('')
     const backendUrl = import.meta.env.VITE_BACKEND_URL
+    const navigate = useNavigate();
     const onSubmitHandler= async(e)=>{
        try {
         e.preventDefault();
@@ -14,6 +16,7 @@ const Login = ({SetToken}) => {
         if(response.data.success)
         {
             SetToken(response.data.token)
+            navigate('/add');
         }
         else{
            toast.error(response.data.message)

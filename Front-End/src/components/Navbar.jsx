@@ -75,6 +75,15 @@ const Navbar = ({ query, handleInput }) => {
           <Link to="/cart">
             <img src={assets.cart_icon} alt="Cart" />
           </Link>
+<a
+  href="https://shopnests-1.onrender.com/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="bg-black text-white px-4 py-2 rounded-md ml-4 text-sm font-medium hover:bg-gray-800 transition"
+>
+  Admin Panel
+</a>
+
         </div>
       </div>
 
