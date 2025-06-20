@@ -12,7 +12,7 @@ const express=require('express')
 
 const OrderRoute=express.Router();
 
-// OrderRoute.post('/list',AdminAuth,)
+OrderRoute.post('/list',AdminAuth,allorder)
 OrderRoute.post('/status',AdminAuth,UpdateStatus)
 
 //Payment Features
@@ -21,7 +21,7 @@ OrderRoute.post('/stripe',authUser,placeorderStripe)
 OrderRoute.post('/razorpay',authUser,placeorderRazorpay)
 
 //User Feature
-OrderRoute.post('/userorders',authUser,allorder)
+OrderRoute.post('/userorders',authUser,UserOrders)
 
 module.exports=OrderRoute
 

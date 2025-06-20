@@ -36,9 +36,21 @@ const placeorderRazorpay=async(req,res)=>{
 
 }
 
-//all order for admin panel
+
 const allorder = async (req, res) => {
   try {
+     const orders=await orderModel.find({})
+     res.json({success:true,orders})
+  } catch (error) {
+    console.log(error.message);
+    
+  }
+};
+
+
+
+const UserOrders=async(req,res)=>{
+   try {
     const { userId } = req.body;
 
     
@@ -63,12 +75,6 @@ const allorder = async (req, res) => {
     console.log(" Error in allorder:", error.message);
     return res.status(500).json({ success: false, message: "Server error", error: error.message });
   }
-};
-
-
-//User Order Data for Frontend
-const UserOrders=async(req,res)=>{
-   
 }
 
 const UpdateStatus=async(req,res)=>{

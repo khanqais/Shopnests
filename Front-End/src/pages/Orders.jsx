@@ -4,41 +4,39 @@ import { ShopContext } from '../context/ShopContext';
 import axios from 'axios';
 
 const Orders = () => {
-  const backendUrl="http://localhost:4000"
-  const {token}=useContext(ShopContext)
+  const backendUrl = "http://localhost:4000";
+  const { token } = useContext(ShopContext);
 
-  const [OrderData,SetOrderData]=useState([])
-  
-  const loadOrderData=async()=>{
+  const [OrderData, SetOrderData] = useState([]);
+
+  const loadOrderData = async () => {
     try {
-      if(!token)
-      {
+      if (!token) {
         return null;
       }
-      const response=await axios.post(backendUrl+'/api/order/userorders',{},{headers:{token}})
+      const response = await axios.post(backendUrl + '/api/order/userorders', {}, { headers: { token } });
       console.log(response.data);
-      if(response.data.success)
-      {
-        let allorderitem=[]
-        response.data.orders.map((order)=>{
-          order.items.map((item)=>{
-            item['status']=order.status;
-            item['payment']=order.payment
-            item['paymentMethod']=order.paymentMethod
-            item['date']=order.date
-             allorderitem.push(item)
-          })
-        })
-        SetOrderData(allorderitem.reverse())
+      if (response.data.success) {
+        let allorderitem = [];
+        response.data.orders.map((order) => {
+          order.items.map((item) => {
+            item['status'] = order.status;
+            item['payment'] = order.payment;
+            item['paymentMethod'] = order.paymentMethod;
+            item['date'] = order.date;
+            allorderitem.push(item);
+          });
+        });
+        SetOrderData(allorderitem.reverse());
       }
     } catch (error) {
-      
+      console.error("Error loading order data:", error);
     }
-  }
+  };
+
   useEffect(() => {
-    loadOrderData()
-  }, [token])
-  
+    loadOrderData();
+  }, [token]);
 
   return (
     <>
@@ -72,22 +70,35 @@ const Orders = () => {
                     <h2 className="text-xl font-semibold text-gray-900">{item.name}</h2>
                     <p className="mt-1 text-indigo-600 font-semibold text-lg">{item.price}</p>
                   </div>
-                  <div className="mt-4 flex flex-wrap text-gray-500 text-sm gap-6">
+                  <div className="mt-4 flex flex-wrap text-sm gap-6">
                     <p>
                       <span className="font-medium text-gray-700">Quantity:</span> {item.quantity}
                     </p>
                     <p>
                       <span className="font-medium text-gray-700">Size:</span> {item.size}
                     </p>
+                    <p>
+                      Date:
+                      <span className="font-medium text-gray-700">{new Date(item.date).toDateString()}</span>
+                    </p>
                   </div>
+                  <p className='text-gray-500 mt-2'>
+                    Payment Method:
+                    <span className="font-medium text-gray-700">{item.paymentMethod}</span>
+                  </p>
                 </div>
-                <div className="flex flex-shrink-0 items-center space-x-3 mt-4 md:mt-0">
-                  <span
-                    className="inline-block w-4 h-4 rounded-full bg-green-500 animate-pulse"
-                    aria-hidden="true"
-                  ></span>
-                  <p className="text-green-700 font-medium select-none">Ready to ship</p>
-                </div>
+<div className="flex flex-col items-end gap-2 mt-4 md:mt-0">
+  <div className="flex items-center gap-2">
+    <span className="inline-block w-2.5 h-2.5 rounded-full bg-green-500"></span>
+    <p className="text-sm text-[#1c1c1c] font-medium">{item.status}</p>
+  </div>
+  <button
+    className="px-3 py-1 border border-gray-300 text-sm text-[#1c1c1c] rounded hover:bg-gray-100 transition"
+    onClick={loadOrderData}
+  >
+    Track Order
+  </button>
+</div>
               </article>
             ))}
           </section>
