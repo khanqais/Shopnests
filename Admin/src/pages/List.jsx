@@ -4,11 +4,11 @@ import { toast } from 'react-toastify';
 
 const List = ({token}) => {
   const [list, setList] = useState([]);
-  const BackEndUrl = "http://localhost:4000";
+  const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
   const fetchList = async () => {
     try {
-      const response = await axios.get(BackEndUrl + '/api/product/list');
+      const response = await axios.get( backendUrl+ '/api/product/list');
       if (response.data.success) {
         setList(response.data.products);
       } else {

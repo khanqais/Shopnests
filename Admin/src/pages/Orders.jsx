@@ -5,7 +5,7 @@ import { assets } from '../assets/assets'
 
 const Orders = ({token}) => {
   const [order,setorder]=useState([])
-  const backendUrl = "http://localhost:4000";
+  const backendUrl = import.meta.env.VITE_BACKEND_URL;
   const FetchApi=async()=>{
     if(!token)
     {

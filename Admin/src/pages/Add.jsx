@@ -10,7 +10,7 @@ const Add = ({token}) => {
   const [image2, setImage2] = useState(null)
   const [image3, setImage3] = useState(null)
   const [image4, setImage4] = useState(null)
-  const BackEndUrl = "http://localhost:4000";
+  const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
   const [name, setName] = useState("")
   const [description, setDescription] = useState("")
@@ -38,7 +38,7 @@ const Add = ({token}) => {
       image3 && formData.append("image3",image3)
       image4 && formData.append("image4",image4)
 
-      const response= await axios.post(BackEndUrl+"/api/product/add",formData,{headers:{token}})
+      const response= await axios.post(backendUrl+"/api/product/add",formData,{headers:{token}})
       if(response.data.success)
       {
         toast.success(response.data.message)
