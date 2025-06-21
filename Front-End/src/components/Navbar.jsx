@@ -35,7 +35,6 @@ const Navbar = ({ query, handleInput }) => {
         </ul>
 
         <div className="element">
-          {/* Show search icon only on /collection */}
           {location.pathname === "/collection" && (
             <>
               <img src={assets.search_icon} alt="Search" onClick={handleSearchClick} />
@@ -52,13 +51,25 @@ const Navbar = ({ query, handleInput }) => {
           )}
 
           <div className="profile-container">
-          
-           <img
-              onClick={()=> token ? null : navigate('/login')}
+            {
+              !token && 
+              <button
+  onClick={() => navigate('/login')}
+  className="bg-black text-white px-4 py-2 rounded-md ml-4 text-sm font-medium hover:bg-gray-800 transition"
+>
+  Login
+</button>
+
+            }
+           {token &&
+            <img
+              // onClick={()=> token ? null : navigate('/login')}
               src={assets.profile_icon}
               alt="Profile"
               className="profile-image"
             />
+           } 
+          
           
             
               {
