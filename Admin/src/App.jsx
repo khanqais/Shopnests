@@ -6,7 +6,6 @@ import Add from './pages/Add'
 import Orders from './pages/Orders'
 import List from './pages/List'
 import { ToastContainer, toast } from 'react-toastify';
-export const BackEndUrl = "http://localhost:4000";
 import Login from './components/Login'
 const App = () => {
   const [token,SetToken]=useState(localStorage.getItem('token')? localStorage.getItem('token') : '' )
