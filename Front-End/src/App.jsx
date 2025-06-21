@@ -13,6 +13,8 @@ import Footer from './components/Footer'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 import Login from "./pages/Login"
+import Forget_password from './pages/Forget_password'
+import ResetPassword from './pages/ResetPassword'
 
 const App = () => {
   return (
@@ -28,7 +30,8 @@ const App = () => {
         <Route path='/place-order' element={<PlaceOrder/>} />
         <Route path='/order' element={<Orders/>} />
         <Route path='/login' element={<Login/>} />
-        
+        <Route path='/forget' element={<Forget_password/>} />
+        <Route path='/reset-password/:token' element={<ResetPassword/>} />
      </Routes>
      <Footer/>
     </div>

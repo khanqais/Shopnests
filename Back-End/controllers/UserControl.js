@@ -1,5 +1,9 @@
 const User = require("../models/Usermodels")
 const jwt = require('jsonwebtoken');
+const nodemailer = require('nodemailer');
+const bcrypt = require("bcryptjs");
+
+
 const login = async (req, res) => {
   const { password, email } = req.body;
 
@@ -58,6 +62,65 @@ const AdminLogin=async(req,res)=>{
    }
 }
 
+const forget_password=async(req,res)=>{
+  const {email}=req.body;
+  if(!email) {
+    return res.status(400).send({message: "please provide the email"});
+  }
+  const checkemail=await User.find({email})
+  if(!checkemail)
+  {
+     return res.json({success:false,message:"Not found"})
+  }
+  const token = jwt.sign({email}, process.env.JWT_SECRET, {expiresIn: "1h"});
+        const tranporter = nodemailer.createTransport({
+            service: "gmail",
+            secure: true,
+            auth: {
+                user: process.env.MY_EMAIL,
+                pass: process.env.MY_PASSWORD,
+            },
+        });
+        const receiver = {
+            from: "qais34913@gmail.com",
+            to: email,
+            subject: "Password Reset Request",
+            text: `Click on this link to generate your password ${process.env.CLIENT_URL}/reset-password/${token}`
+        };
+        await tranporter.sendMail(receiver);
+        res.status(200).json({success:true,message:"Send the Link to Gmail"})
+  
+}
+
+const reset_password = async (req, res) => {
+  try {
+    const { token } = req.params;
+    const { password } = req.body;
+
+    if (!password) {
+      return res.status(400).json({ success: false, message: "Password is required" });
+    }
+
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const email = decoded.email;
+
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.status(404).json({ success: false, message: "User not found" });
+    }
+
+    
+    user.password = password; 
+
+    await user.save();
+
+    res.json({ success: true, message: "Password reset successful" });
+  } catch (error) {
+    console.log("Reset Password Error:", error);
+    res.status(400).json({ success: false, message: "Invalid or expired token" });
+  }
+};
+
 module.exports={
-    login,register,AdminLogin
+    login,register,AdminLogin,forget_password,reset_password
 }
