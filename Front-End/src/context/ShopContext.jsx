@@ -17,6 +17,11 @@ const ShopContextProvider=(props)=>{
             toast.error('Select Product Size');
             return;
         }
+        if(!token)
+        {
+            toast.warning("Please Login")
+            return;
+        }
 
         let CartData = structuredClone(cartitem);
 
