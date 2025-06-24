@@ -30,6 +30,14 @@ const Login = ({SetToken}) => {
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4 py-12 sm:px-6 lg:px-8">
       <div className="max-w-md w-full bg-white p-8 rounded-3xl shadow-lg">
+         <div className="flex flex-col p-3">
+        <div>
+         Email:qais34913@gmail.com,
+      </div>
+      <div>
+        password:KhanQais
+      </div>
+      </div>
         <h1
           className="text-4xl text-gray-900 mb-10 select-none text-center"
           tabIndex={-1}
@@ -48,7 +56,7 @@ const Login = ({SetToken}) => {
               type="email"
               onChange={(e)=>setemail(e.target.value)}
               placeholder="Enter your email"
-              required
+              required 
               
               className="appearance-none rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
             />
@@ -82,6 +90,7 @@ const Login = ({SetToken}) => {
           </button>
         </form>
       </div>
+     
     </div>
   );
 };
