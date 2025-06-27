@@ -80,7 +80,7 @@ const ShopContextProvider=(props)=>{
      }
      return totalCount;
    }
- const updatequantity = async (itemId, size, quantity) => { // Changed itemid to itemId
+ const updatequantity = async (itemId, size, quantity) => {
         let CartData = structuredClone(cartitem);
 
         if (quantity <= 0) {
@@ -89,7 +89,9 @@ const ShopContextProvider=(props)=>{
                 delete CartData[itemId];
             }
         } else {
-            if (!CartData[itemId]) CartData[itemId] = {};
+            if (!CartData[itemId]) {
+              CartData[itemId] = {};
+             }
             CartData[itemId][size] = quantity;
         }
 
@@ -162,6 +164,7 @@ const getProductdata=async()=>{
         if(response.data.success)
         {
             SetProdcut(response.data.products)
+            toast.success("Product is fetch")
         }
         
         else{

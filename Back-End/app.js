@@ -8,6 +8,7 @@ const router = require("./routes/auth_route");
 const ProductRoute = require("./routes/ProductRoute");
 const CartRoute=require('./routes/CartRoute');
 const OrderRoute = require("./routes/OrderRoute");
+const axios = require("axios");
 
 app.use(express.json());
 app.use(cors());
@@ -16,6 +17,12 @@ app.use('/api/user',router)
 app.use('/api/product',ProductRoute)
 app.use('/api/cart',CartRoute)
 app.use('/api/order',OrderRoute)
+
+
+
+setInterval(() => {
+  axios.get("https://shopnests.onrender.com")
+}, 1000 * 60 * 5);
 
 app.get('/',(req,res)=>{
     res.send("Hii mom ")

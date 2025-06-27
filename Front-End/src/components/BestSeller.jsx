@@ -1,5 +1,5 @@
 import React, { useState ,useEffect} from 'react'
-import { products } from '../assets/assets';
+
 import ProductItem from './ProductItem';
 import "./Latest.css"
 import { useContext } from 'react';
