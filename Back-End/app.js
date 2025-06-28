@@ -18,8 +18,6 @@ app.use('/api/product',ProductRoute)
 app.use('/api/cart',CartRoute)
 app.use('/api/order',OrderRoute)
 
-
-
 setInterval(() => {
   axios.get("https://shopnests.onrender.com")
 }, 1000 * 60 * 5);

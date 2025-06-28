@@ -8,7 +8,7 @@ const Contact = () => {
       <Navbar/>
       <section className="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
+        
         <div className="text-center mb-12">
           <h2 className="text-3xl font-light text-gray-800 mb-2 tracking-wide">
             CONTACT US
@@ -17,7 +17,7 @@ const Contact = () => {
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          {/* Image Section */}
+          
           <div className="relative">
             <img 
               src={assets.contact_img} 
@@ -26,9 +26,9 @@ const Contact = () => {
             />
           </div>
           
-          {/* Contact Information Section */}
+          
           <div className="space-y-8">
-            {/* Our Store */}
+            
             <div>
               <h3 className="text-xl font-medium text-gray-800 mb-4">
                 Our Store
@@ -39,14 +39,14 @@ const Contact = () => {
               </div>
               <div className="text-gray-600 space-y-1 mt-4">
                 <p>Tel: (415) 555-0132</p>
-                <p>Email: admin@forever.com</p>
+                <p>Email: admin@shopnest.com</p>
               </div>
             </div>
             
-            {/* Careers at Forever */}
+            
             <div>
               <h3 className="text-xl font-medium text-gray-800 mb-4">
-                Careers at Forever
+                Careers at Shopnest
               </h3>
               <p className="text-gray-600 mb-6">
                 Learn more about our teams and job openings.

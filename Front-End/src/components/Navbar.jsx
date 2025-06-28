@@ -63,7 +63,7 @@ const Navbar = ({ query, handleInput }) => {
             }
            {token &&
             <img
-              // onClick={()=> token ? null : navigate('/login')}
+              
               src={assets.profile_icon}
               alt="Profile"
               className="profile-image"

@@ -17,7 +17,7 @@ const Cart = () => {
       const tempData = [];
       for (const items in cartitem) {
         for (const item in cartitem[items]) {
-          if (cartitem[items][item] > 0) { // Only include items with quantity > 0
+          if (cartitem[items][item] > 0) { 
             tempData.push({
               _id: items,
               size: item,
@@ -52,7 +52,7 @@ const Cart = () => {
           cartData.map((item, index) => {
             const productdata = products.find((product) => product._id === item._id);
             
-            if (!productdata) return null; // Skip if product not found
+            if (!productdata) return null; 
             
             return (
               <div key={index} className='py-4 border-b text-gray-700 flex items-center gap-4'>
