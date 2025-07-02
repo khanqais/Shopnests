@@ -12,7 +12,7 @@ const Hero = () => {
         <p className="shop-link">SHOP NOW</p>
       </div>
       <div className="hero-right">
-        <img src={assets.hero_img} alt="Hero" />
+        <img src={assets.Clothes} alt="Hero" />
       </div>
       
     </div>

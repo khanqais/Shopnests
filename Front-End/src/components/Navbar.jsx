@@ -1,15 +1,18 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { assets } from '../assets/assets';
 import { ShopContext } from '../context/ShopContext';
 import { NavLink, Link, useNavigate, useLocation } from 'react-router-dom'; 
+import { jwtDecode } from "jwt-decode";
+
 import './Navbar.css';
 
 const Navbar = ({ query, handleInput }) => {
   const [open, setOpen] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
+  const [Username,SetUsername]=useState("")
   const navigate = useNavigate();
   const location = useLocation(); 
-  const {getCartCount,token,SetToken,setCartitem} =useContext(ShopContext);
+  const {getCartCount,token,SetToken,setCartitem,userName} =useContext(ShopContext);
   const handleSearchClick = () => {
     setShowSearch(!showSearch);
   };
@@ -20,6 +23,13 @@ const Navbar = ({ query, handleInput }) => {
     SetToken('')
     navigate('/login')
   }
+  useEffect(() => {
+    if (token) {
+      const decoded = jwtDecode(token);
+      SetUsername(decoded.name);
+    }
+  }, [token])
+  
   return (
     <div>
       <div className="nav-bar">
@@ -67,6 +77,7 @@ const Navbar = ({ query, handleInput }) => {
               src={assets.profile_icon}
               alt="Profile"
               className="profile-image"
+              
             />
            } 
           
@@ -75,7 +86,11 @@ const Navbar = ({ query, handleInput }) => {
               {
                 token && 
                 <ul className="dropdown-menu">
-                <li>My Profile</li>
+                <li>
+                  <div className="font-bold p-3 text-lg break-words max-w-[160px] leading-tight">
+                   Hello {Username}
+                   </div>
+                </li>
                 <li onClick={()=>navigate('/order')}>Orders</li>
                 <li onClick={logout}>Logout</li>
               </ul>

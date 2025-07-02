@@ -3,10 +3,10 @@ const mongoose=require('mongoose')
 const bcrpt=require('bcryptjs')
 const jwt= require('jsonwebtoken')
 const UserSchema=new mongoose.Schema({
-    // googleId: { type: String, 
-    //     unique: true 
+    googleId: { type: String, 
+        unique: true 
 
-    // },
+    },
     name:{
         type:String,
         required:[true,'PLease provide name'],

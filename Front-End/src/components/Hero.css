@@ -46,12 +46,6 @@
   width: 50%;
   background-color:  #FFDAD6;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  
 }
 
-.hero-right img {
-  max-height: 100%;
-  max-width: 100%;
-  object-fit: contain;
-}

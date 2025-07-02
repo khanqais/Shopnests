@@ -17,6 +17,7 @@ import Forget_password from './pages/Forget_password'
 import ResetPassword from './pages/ResetPassword'
 import { ShopContext } from './context/ShopContext'
 import { useNavigate } from 'react-router-dom';
+import Profile from './pages/Profile'
 
 const App = () => {
   const {SetToken, token, getUserCart, backendUrl}=useContext(ShopContext)
@@ -47,7 +48,9 @@ const App = () => {
         <Route path='/order' element={<Orders/>} />
         <Route path='/login' element={<Login/>} />
         <Route path='/forget' element={<Forget_password/>} />
+        <Route path='/profile' element={<Profile/>} />
         <Route path='/reset-password/:token' element={<ResetPassword/>} />
+
      </Routes>
      <Footer/>
     </div>

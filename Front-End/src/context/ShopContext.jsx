@@ -1,6 +1,9 @@
 import { toast } from "react-toastify";
 import { createContext, useState,useEffect } from "react";
 export const ShopContext = createContext();
+import { jwtDecode } from "jwt-decode";
+
+
 import axios from 'axios'
 
 const ShopContextProvider=(props)=>{
@@ -9,7 +12,7 @@ const ShopContextProvider=(props)=>{
     const [cartitem,setCartitem]=useState({})
     const [products,SetProdcut]=useState([])
     const backendUrl = import.meta.env.VITE_BACKEND_URL;
-
+    
     const [token,SetToken]=useState('')
     
     const AddtoCart = async (itemId, size) => { 
@@ -190,6 +193,12 @@ useEffect(() => {
         getUserCart(localStorage.getItem('token'))
     }
 }, [])
+
+
+
+  
+
+
 
 
 
