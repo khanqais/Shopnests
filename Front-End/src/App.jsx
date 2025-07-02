@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import {Route,Routes} from 'react-router-dom'
 import Home from './pages/Home'
 import Collection from './pages/Collection'
@@ -15,8 +15,24 @@ import 'react-toastify/dist/ReactToastify.css'
 import Login from "./pages/Login"
 import Forget_password from './pages/Forget_password'
 import ResetPassword from './pages/ResetPassword'
+import { ShopContext } from './context/ShopContext'
+import { useNavigate } from 'react-router-dom';
 
 const App = () => {
+  const {SetToken, token, getUserCart, backendUrl}=useContext(ShopContext)
+    const navigate = useNavigate();
+  useEffect(() => {
+  const query = new URLSearchParams(window.location.search);
+  const token = query.get("token"); 
+  const userId = query.get("userId");
+  if (token && userId) {
+    SetToken(token);
+    localStorage.setItem("token", token);
+    localStorage.setItem("userId", userId);
+    getUserCart(token);
+    navigate("/");
+  }
+}, []);
   return (
     <div className=''>
     <ToastContainer/>

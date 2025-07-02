@@ -164,7 +164,7 @@ const getProductdata=async()=>{
         if(response.data.success)
         {
             SetProdcut(response.data.products)
-            toast.success("Product is fetch")
+           
         }
         
         else{
