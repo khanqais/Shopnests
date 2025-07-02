@@ -26,7 +26,8 @@ router.get(
       httpOnly: true,
       expires: new Date(Date.now() + 24 * 60 * 60 * 1000),
     });
-    res.redirect(`http://localhost:5173?token=${token}&userId=${req.user._id}`);
+    res.redirect(`${process.env.CLIENT_URL}?token=${token}&userId=${req.user._id}`);
+
 
   }
 );
