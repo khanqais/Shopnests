@@ -2,6 +2,13 @@
 
 Welcome to **Shopnests**, your modern and feature-rich e-commerce platform, designed for a seamless online shopping experience.
 
+## 📺 Demo
+
+Watch a demonstration of Shopnests on YouTube:<br>
+👉 [User Panel](https://youtu.be/Ca7zn_lGTTQ)
+👉 [Admin Panel](https://youtu.be/RmEl2XluMco)
+
+
 ## 🛍️ Features
 
 - **Product Catalog:** Browse products by category, with filtering, sorting, and detailed product descriptions.
@@ -35,12 +42,8 @@ Welcome to **Shopnests**, your modern and feature-rich e-commerce platform, desi
 - **Backend:** Node.js / Express.js
 - **Database:** MongoDB
 - **Authentication:** JWT & Bcrypt
-- **Deployment:** Vercel (`shopnests-backend.vercel.app`)
 
-## 📺 Demo
 
-Watch a demonstration of Shopnests on YouTube:<br>
-👉 [Watch Demo](YOUR_YOUTUBE_DEMO_LINK_HERE)
 
 ## 🗂️ Folder Structure
 
@@ -51,11 +54,8 @@ Watch a demonstration of Shopnests on YouTube:<br>
 
 Contributions are welcome! Please open issues or submit pull requests for improvements.
 
-## 📄 License
 
-This project is licensed under the MIT License.
 
 ---
 
-*Replace `YOUR_YOUTUBE_DEMO_LINK_HERE` with your YouTube video demo URL.*
 
