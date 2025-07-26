@@ -13,10 +13,6 @@ Welcome to **Shopnests**, your modern and feature-rich e-commerce platform, desi
 - **Payment Gateway Integration:** Secure checkout supporting multiple payment methods (credit/debit/PayPal).
 - **Responsive Design:** Optimized for desktop, tablet, and mobile.
 - **Wishlist:** Save your favorite products for later.
-- **Real-Time Notifications:** Get updates for orders, new products, and exclusive offers.
-- **Customer Support Integration:** Contact forms or live chat for assistance.
-- **SEO & Performance:** Fast loading, search engine-friendly.
-- **Dark/Light Mode:** Improved accessibility and comfort.
 
 ## 🚀 Getting Started
 
