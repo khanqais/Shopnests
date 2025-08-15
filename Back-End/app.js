@@ -54,7 +54,6 @@ passport.use(
         let userByEmail = await user.findOne({ email: profile.emails[0].value });
         
         if (userByEmail) {
-          
           userByEmail.googleId = profile.id;
           userByEmail.profilePicture = profile.photos[0].value;
           await userByEmail.save();
@@ -93,11 +92,12 @@ passport.deserializeUser(async (id, done) => {
 
 setInterval(() => {
   axios.get("https://shopnests.onrender.com")
-}, 1000 * 60 * 5);
+}, 1000 * 60 * 15);
 
 app.get('/',(req,res)=>{
-    res.send("Hii mom ")
+    res.send("Hii mom  ")
 })
+
 
 const PORT = process.env.PORT || 4000;
 
