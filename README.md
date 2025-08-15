@@ -4,9 +4,8 @@ Welcome to **Shopnests**, your modern and feature-rich e-commerce platform, desi
 
 ## 📺 Demo
 
-Watch a demonstration of Shopnests on YouTube:<br>
-👉 [User Panel](https://youtu.be/Ca7zn_lGTTQ)
-👉 [Admin Panel](https://youtu.be/RmEl2XluMco)
+Live Demo:<br>
+👉 [Live Demo](https://shopnest-p2u4.onrender.com/)
 
 
 ## 🛍️ Features
