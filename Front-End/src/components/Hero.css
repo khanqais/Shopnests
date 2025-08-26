@@ -1,51 +1,288 @@
 .hero-section {
-  display: flex;
-  width: 1000px;
-  height: 350px;
-  margin: 40px auto;
-  border: 1px solid #ccc;
+    display: flex;
+    width: 100%;
+    max-width: 1000px;
+    height: 350px;
+    margin: 40px auto;
+    border: 1px solid #ccc;
 }
 
 .hero-left {
-  width: 50%;
-  background-color: white;
-  padding: 80px 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    width: 50%;
+    background-color: white;
+    padding: 80px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .subtitle {
-  font-size: 14px;
-  letter-spacing: 1px;
-  color: #444;
-  margin-bottom: 10px;
-  font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #444;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.prata-regular {
+    font-size: 2.5rem;
+    margin: 10px 0 20px 0;
+    line-height: 1.2;
 }
 
 .shop-link {
-  font-weight: bold;
-  font-size: 14px;
-  color: #333;
-  text-transform: uppercase;
-  position: relative;
-  display: inline-block;
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.shop-link:hover {
+    color: #666;
 }
 
 .shop-link::after {
-  content: "";
-  display: inline-block;
-  width: 40px;
-  height: 1px;
-  background: #333;
-  margin-left: 10px;
-  vertical-align: middle;
+    content: "";
+    display: inline-block;
+    width: 40px;
+    height: 1px;
+    background: #333;
+    margin-left: 10px;
+    vertical-align: middle;
+    transition: background 0.3s ease;
+}
+
+.shop-link:hover::after {
+    background: #666;
 }
 
 .hero-right {
-  width: 50%;
-  background-color:  #FFDAD6;
-  display: flex;
-  
+    width: 50%;
+    background-color: #FFDAD6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
+.hero-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+@media (max-width: 1024px) {
+    .hero-section {
+        margin: 30px 20px;
+        height: 320px;
+    }
+    
+    .hero-left {
+        padding: 60px 30px;
+    }
+    
+    .prata-regular {
+        font-size: 2.2rem;
+    }
+    
+    .subtitle {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        flex-direction: column;
+        height: auto;
+        margin: 20px 15px;
+    }
+    
+    .hero-left,
+    .hero-right {
+        width: 100%;
+    }
+    
+    .hero-left {
+        padding: 40px 30px;
+        text-align: center;
+        order: 2; 
+    }
+    
+    .hero-right {
+        height: 300px;
+        order: 1; 
+    }
+    
+    .prata-regular {
+        font-size: 2rem;
+        margin: 15px 0 25px 0;
+    }
+    
+    .subtitle {
+        font-size: 12px;
+    }
+    
+    .shop-link {
+        font-size: 13px;
+    }
+    
+    .shop-link::after {
+        width: 35px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section {
+        margin: 15px 10px;
+    }
+    
+    .hero-left {
+        padding: 35px 25px;
+    }
+    
+    .hero-right {
+        height: 250px;
+    }
+    
+    .prata-regular {
+        font-size: 1.8rem;
+        margin: 12px 0 20px 0;
+    }
+    
+    .subtitle {
+        font-size: 11px;
+        letter-spacing: 0.5px;
+    }
+    
+    .shop-link {
+        font-size: 12px;
+    }
+    
+    .shop-link::after {
+        width: 30px;
+        margin-left: 8px;
+    }
+}
+
+@media (max-width: 400px) {
+    .hero-section {
+        margin: 10px 8px;
+    }
+    
+    .hero-left {
+        padding: 30px 20px;
+    }
+    
+    .hero-right {
+        height: 220px;
+    }
+    
+    .prata-regular {
+        font-size: 1.6rem;
+        margin: 10px 0 18px 0;
+    }
+    
+    .subtitle {
+        font-size: 10px;
+        margin-bottom: 8px;
+    }
+    
+    .shop-link {
+        font-size: 11px;
+    }
+    
+    .shop-link::after {
+        width: 25px;
+        margin-left: 6px;
+    }
+}
+
+@media (max-width: 320px) {
+    .hero-section {
+        margin: 8px 5px;
+    }
+    
+    .hero-left {
+        padding: 25px 15px;
+    }
+    
+    .hero-right {
+        height: 200px;
+    }
+    
+    .prata-regular {
+        font-size: 1.4rem;
+        margin: 8px 0 15px 0;
+    }
+    
+    .subtitle {
+        font-size: 9px;
+        margin-bottom: 6px;
+    }
+    
+    .shop-link {
+        font-size: 10px;
+    }
+    
+    .shop-link::after {
+        width: 20px;
+        margin-left: 5px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .hero-section {
+        max-width: 1200px;
+        height: 400px;
+    }
+    
+    .hero-left {
+        padding: 100px 50px;
+    }
+    
+    .prata-regular {
+        font-size: 3rem;
+    }
+    
+    .subtitle {
+        font-size: 15px;
+    }
+    
+    .shop-link {
+        font-size: 15px;
+    }
+    
+    .shop-link::after {
+        width: 45px;
+    }
+}
+
+
+@media (max-width: 1024px) and (orientation: landscape) {
+    .hero-section {
+        height: 280px;
+    }
+    
+    .hero-left {
+        padding: 40px 30px;
+    }
+    
+    .prata-regular {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) and (orientation: portrait) {
+    .hero-right {
+        height: 280px;
+    }
+    
+    .hero-left {
+        padding: 40px 25px;
+    }
+}

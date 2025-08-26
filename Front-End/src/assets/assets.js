@@ -97,7 +97,7 @@ export const assets = {
     Clothes
 }
 
-export const products = [
+export const products = [ 
     {
         _id: "aaaaa",
         name: "Women Round Neck Cotton Top",

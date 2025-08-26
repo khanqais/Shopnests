@@ -5,6 +5,7 @@
   padding: 3px 5vw;
   background-color: #fff;
   font-family: Arial, sans-serif;
+  position: relative;
 }
 
 .logo img {
@@ -73,8 +74,8 @@
   border-radius: 6px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   padding: 6px 0;
-  width: 160px; /* Set a fixed width */
-  max-width: 200px; /* Allow a bit more width for longer names */
+  width: 160px;
+  max-width: 200px;
   z-index: 1000;
   visibility: hidden;
   opacity: 0;
@@ -88,17 +89,16 @@
   padding: 10px 16px;
   font-size: 14px;
   cursor: pointer;
-  white-space: nowrap; /* Prevent text from wrapping */
-  overflow: hidden; /* Hide overflow */
-  text-overflow: ellipsis; /* Add ellipsis for overflow text */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   transition: background-color 0.2s;
 }
 
 .dropdown-menu li .font-bold {
-  white-space: normal; /* Allow text to wrap */
-  padding: 0 10px; /* Add some padding for better spacing */
+  white-space: normal;
+  padding: 0 10px;
 }
-
 
 .dropdown-menu li:hover {
   background-color: #f5f5f5;
@@ -108,4 +108,337 @@
   visibility: visible;
   opacity: 1;
   pointer-events: auto;
+}
+
+.mobile-menu-btn {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.mobile-menu-btn span {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 3px 0;
+  transition: 0.3s;
+}
+
+.mobile-menu-btn.open span:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.mobile-menu-btn.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-btn.open span:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.mobile-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.mobile-overlay.active {
+  display: block;
+}
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100vh;
+  background-color: white;
+  z-index: 1000;
+  padding: 20px;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s ease;
+  overflow-y: auto;
+}
+
+.mobile-menu.active {
+  right: 0;
+}
+
+.mobile-menu-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+}
+
+.mobile-nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 50px 0 30px 0;
+}
+
+.mobile-nav-links li {
+  margin: 20px 0;
+}
+
+.mobile-nav-links .link {
+  font-size: 18px;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.mobile-nav-links .link.active {
+  color: #000;
+  text-decoration: underline;
+}
+
+.mobile-search-container {
+  margin: 20px 0;
+}
+
+.mobile-search-container input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.mobile-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.mobile-profile-section {
+  padding: 15px 0;
+  border-top: 1px solid #eee;
+  margin-top: 20px;
+}
+
+.mobile-profile-info {
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.mobile-profile-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mobile-profile-actions button {
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 10px 0;
+  font-size: 16px;
+  cursor: pointer;
+  color: #333;
+}
+
+.mobile-profile-actions button:hover {
+  color: #666;
+}
+
+.btn-primary {
+  background-color: #000;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 6px;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-primary:hover {
+  background-color: #333;
+}
+
+
+@media (max-width: 1024px) {
+  .nav-bar {
+    padding: 3px 3vw;
+  }
+  
+  .nav-links {
+    gap: 1.5rem;
+  }
+  
+  .element {
+    margin-right: 20px;
+  }
+  
+  .element img {
+    margin-left: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-bar {
+    padding: 10px 20px;
+  }
+  
+  .logo img {
+    height: 50px;
+    width: 120px;
+  }
+  
+  .nav-links {
+    display: none;
+  }
+  
+  .mobile-menu-btn {
+    display: flex;
+  }
+  
+  .mobile-menu {
+    display: block;
+  }
+  
+  .element {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+  }
+  
+  .element img {
+    height: 22px;
+    width: 22px;
+    margin-left: 15px;
+  }
+  
+  .dropdown-menu {
+    right: -10px;
+    width: 140px;
+  }
+}
+@media (max-width: 576px) {
+  .nav-bar {
+    padding: 8px 15px;
+  }
+  
+  .logo img {
+    height: 45px;
+    width: 100px;
+  }
+  
+  .element {
+    margin-right: 0;
+  }
+  
+  .element img {
+    height: 20px;
+    width: 20px;
+    margin-left: 10px;
+  }
+  
+  .btn-primary {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+  
+  .mobile-menu {
+    width: 280px;
+  }
+  
+  .dropdown-menu {
+    width: 120px;
+    font-size: 12px;
+  }
+  
+  .dropdown-menu li {
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 400px) {
+  .nav-bar {
+    padding: 8px 10px;
+  }
+  
+  .logo img {
+    height: 40px;
+    width: 90px;
+  }
+  
+  .element img {
+    height: 18px;
+    width: 18px;
+    margin-left: 8px;
+  }
+  
+  .btn-primary {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+  
+  .mobile-menu {
+    width: 250px;
+  }
+  
+  .mobile-nav-links .link {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 320px) {
+  .nav-bar {
+    padding: 6px 8px;
+  }
+  
+  .logo img {
+    height: 35px;
+    width: 80px;
+  }
+  
+  .element img {
+    height: 16px;
+    width: 16px;
+    margin-left: 6px;
+  }
+  
+  .btn-primary {
+    padding: 5px 8px;
+    font-size: 10px;
+  }
+  
+  .mobile-menu {
+    width: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .element input[type="text"] {
+    width: 150px !important;
+    padding: 6px !important;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .element input[type="text"] {
+    width: 120px !important;
+    padding: 5px !important;
+    font-size: 12px;
+  }
 }
