@@ -90,9 +90,9 @@ passport.deserializeUser(async (id, done) => {
   }
 });
 
-setInterval(() => {
-  axios.get("https://shopnests.onrender.com")
-}, 1000 * 60 * 15);
+// setInterval(() => {
+//   axios.get("https://shopnests.onrender.com")
+// }, 1000 * 60 * 15);
 
 app.get('/',(req,res)=>{
     res.send("Hii mom  ")

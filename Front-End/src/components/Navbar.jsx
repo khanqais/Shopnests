@@ -156,7 +156,7 @@ const Navbar = ({ query, handleInput }) => {
         onClick={closeMobileMenu}
       ></div>
 
-      {/* Mobile Menu */}
+     
       <div className={`mobile-menu ${isMobileMenuOpen ? 'active' : ''}`}>
         <button className="mobile-menu-close" onClick={closeMobileMenu}>×</button>
         
