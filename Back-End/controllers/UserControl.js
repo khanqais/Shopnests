@@ -67,7 +67,7 @@ const forget_password=async(req,res)=>{
   if(!email) {
     return res.status(400).send({message: "please provide the email"});
   }
-  const checkemail=await User.find({email})
+  const checkemail=await User.findOne({email})
   if(!checkemail)
   {
      return res.json({success:false,message:"Not found"})
