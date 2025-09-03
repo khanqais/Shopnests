@@ -36,7 +36,7 @@ Transform Shopping Into Seamless, Effortless Experiences
   - [Installation](#installation)
   - [Usage](#usage)
   - [Testing](#testing)
-- [Features](#features)
+- [Features](#Features)
 - [Technologies Used](#technologies-used)
 - [Folder Structure](#folder-structure)
 - [Demo](#demo)
@@ -98,7 +98,7 @@ npm test
 
 text
 
-## 🛍️ Features
+##  Features
 
 - **Product Catalog:** Browse products by category, with filtering, sorting, and detailed product descriptions
 - **Shopping Cart:** Add, update, remove products; view a cart summary and proceed to checkout
@@ -174,4 +174,4 @@ No packages published
 ---
 
 **[📋 Return to Top](#shopnests)**
-is this right or there is any error
+
