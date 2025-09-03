@@ -57,7 +57,121 @@ This project requires the following dependencies:
 - **Package Manager:** Npm
 
 ### Installation
-
 Build Shopnests from the source and install dependencies:
 
 1. **Clone the repository:**
+git clone https://github.com/khanqais/Shopnests
+
+
+3. **Navigate to the project directory:**
+cd shopnests
+
+
+4. **Install the dependencies:**
+
+Using **npm:**
+npm install
+
+
+For both frontend and backend:
+git clone https://github.com/khanqais/Shopnests.git
+cd Shopnests/Front-End
+npm install
+cd ../Back-End
+npm install
+
+text
+
+### Usage
+
+Run the project with:
+
+npm start
+
+
+### Testing
+
+Shopnests uses the **test framework**. Run the test suite with:
+
+Using **npm:**
+npm test
+
+text
+
+## 🛍️ Features
+
+- **Product Catalog:** Browse products by category, with filtering, sorting, and detailed product descriptions
+- **Shopping Cart:** Add, update, remove products; view a cart summary and proceed to checkout
+- **User Accounts:** Secure registration, login, profile management, and order history tracking
+- **Admin Panel:** Add, edit, delete products, manage users, process orders, and track inventory
+- **Product Search:** Fast and flexible search to find items quickly
+- **Order Management:** Place, track, and manage orders
+- **Payment Gateway Integration:** Secure checkout supporting multiple payment methods (credit/debit/PayPal/Stripe/Razorpay)
+- **Responsive Design:** Optimized for desktop, tablet, and mobile
+- **Wishlist:** Save your favorite products for later
+
+## ⚙️ Technologies Used
+
+- **Frontend:** React.js / Next.js
+- **Backend:** Node.js / Express.js
+- **Database:** MongoDB
+- **Authentication:** JWT & Bcrypt
+- **Payment Gateways:** Stripe, Razorpay
+- **Cloud Storage:** Cloudinary
+- **Development Tools:** Vite, ESLint, Nodemon
+- **CSS Processing:** PostCSS, Autoprefixer
+
+## 🗂️ Folder Structure
+
+- `/Front-End` – Client-side code (UI/UX)
+- `/Back-End` – REST API & business logic
+
+## 📺 Demo
+
+**Live Demo:** 👉 [shopnests-backend.vercel.app](https://shopnests-backend.vercel.app)
+
+## 🚀 Quick Setup
+
+1. **Set up environment variables** as per the provided `.env.example` files
+2. **Start the servers:** Start the Back-End server, then the Front-End development server
+3. **Access the app:** Open your browser and go to the local address shown in your terminal
+
+## 🤝 Contributing
+
+Contributions are welcome! Please open issues or submit pull requests for improvements.
+
+## 📊 Repository Statistics
+
+- **Stars:** 1 star
+- **Watchers:** 0 watching
+- **Forks:** 0 forks
+
+## 📋 Languages
+
+- **JavaScript:** 83.8%
+- **CSS:** 15.7%
+- **HTML:** 0.5%
+
+## About
+
+Transform Shopping Into Seamless, Effortless Experiences
+
+**Website:** [shopnests-backend.vercel.app](https://shopnests-backend.vercel.app)
+
+### Resources
+
+- Readme
+- Activity
+
+### Releases
+
+No releases published
+
+### Packages
+
+No packages published
+
+---
+
+**[📋 Return to Top](#shopnests)**
+
