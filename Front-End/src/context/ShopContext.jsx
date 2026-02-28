@@ -11,7 +11,13 @@ const ShopContextProvider=(props)=>{
     const delivery_free=10
     const [cartitem,setCartitem]=useState({})
     const [products,SetProdcut]=useState([])
-    const backendUrl = import.meta.env.VITE_BACKEND_URL;
+        const rawBackendUrl = (import.meta.env.VITE_BACKEND_URL || '').trim();
+        const backendUrl = rawBackendUrl
+            ? (rawBackendUrl.startsWith('http://') || rawBackendUrl.startsWith('https://')
+                    ? rawBackendUrl
+                    : `https://${rawBackendUrl}`)
+                    .replace(/\/+$/, '')
+            : '';
     
     const [token,SetToken]=useState('')
     

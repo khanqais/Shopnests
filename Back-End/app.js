@@ -14,8 +14,19 @@ const user = require("./models/Usermodels")
 const Google=require("passport-google-oauth20").Strategy 
 const session=require('express-session');
 
+const backendBaseUrl =
+  process.env.BACKEND_URL ||
+  process.env.API_URL ||
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "");
+
+const googleCallbackUrl =
+  process.env.GOOGLE_CALLBACK_URL ||
+  process.env.CallBackURl ||
+  (backendBaseUrl ? `${backendBaseUrl}/api/user/auth/google/callback` : "");
+
 app.use(express.json());
 app.use(cors());
+app.set("trust proxy", 1);
 app.use(
   session({
     secret: process.env.SESSION_SECRET || "secret",
@@ -39,7 +50,8 @@ passport.use(
     {
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      callbackURL: process.env.CallBackURl,
+      callbackURL: googleCallbackUrl,
+      proxy: true,
     },
     async (accessToken, refreshToken, profile, done) => {
       try {
