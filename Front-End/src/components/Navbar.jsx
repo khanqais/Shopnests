@@ -99,7 +99,7 @@ const Navbar = ({ query, handleInput }) => {
             {!token && 
               <button
                 onClick={() => navigate('/login')}
-                className="btn-primary"
+                className="btn-primary auth-action-btn"
               >
                 Login
               </button>
@@ -133,7 +133,7 @@ const Navbar = ({ query, handleInput }) => {
             href="https://shopnests-1.onrender.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-primary"
+            className="btn-primary auth-action-btn"
           >
             Admin Panel
           </a>
@@ -187,7 +187,7 @@ const Navbar = ({ query, handleInput }) => {
             href="https://shopnests-1.onrender.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-primary"
+            className="btn-primary auth-action-btn"
           >
             Admin Panel
           </a>
@@ -207,7 +207,7 @@ const Navbar = ({ query, handleInput }) => {
           <div className="mobile-profile-section">
             <button 
               onClick={() => { navigate('/login'); handleNavClick(); }}
-              className="btn-primary"
+              className="btn-primary auth-action-btn"
               style={{ width: '100%' }}
             >
               Login
